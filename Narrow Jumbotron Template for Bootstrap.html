@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+		<title>Supplier Name Checkout</title>
+		
+
+		<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		  
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> 
+		<link href="animate.css" rel="stylesheet"></link>	
+		<link href="./Narrow Jumbotron Template for Bootstrap_files/narrow-jumbotron.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		
+		<style>
+			#cardLogoContainer {
+				float: right;
+			}
+			#cardLogoContainer img {
+				margin: 4px;
+				transition: opacity 0.2s;
+				transition: filter 0.2s;
+				border-radius: 6px;
+			}
+			#cardLogoContainer img.disabled {
+				opacity: 0.4;
+				filter: alpha(opacity=40); /* msie */
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				-o-filter: grayscale(100%);
+				-ms-filter: grayscale(100%);
+				filter: grayscale(100%); 
+				transition: opacity 0.2s;
+				transition: filter 0.2s;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+		<div class="container">
+		  <header class="header clearfix">
+			<h1 class="text-muted">Page Title</h1>
+		  </header>
+
+		  <main role="main">
+		  
+			<div class="alert alert-primary" role="alert">
+			  <h4 class="alert-heading">AUD $12.00</h4>
+			  <p>Payments by Mastercard incur the following surcharges</p>
+			</div>
+
+			<form novalidate>
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="customerReferenceNumber">Customer Number</label>
+					<input type="text" class="form-control" id="customerReferenceNumber" placeholder required>
+					<div class="invalid-feedback">
+						Please provide a valid Customer Number.
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="paymentReferenceNumber">Invoice Number</label>
+					<input type="text" class="form-control" id="paymentReferenceNumber" placeholder required>
+					<div class="invalid-feedback">
+						Please provide a valid Invoice Number.
+					</div>
+				</div>
+			  </div>
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="buyerName">Full Name</label>
+				  <input type="text" class="form-control" id="buyerName" placeholder="Jane Doe" required autcomplete="name">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="buyerPhoneNumber">Phone Number</label>
+				  <input type="tel" class="form-control" id="buyerPhoneNumber" placeholder="+61 433 111 000" required autcomplete="tel">
+				</div>
+
+			  </div>
+			  <div class="form-row">
+				<div class="form-group col-md-12">
+				  <label for="buyerEmailAddress">Email Address</label>
+				  <input type="email" class="form-control" id="buyerEmailAddress" placeholder="janedoe@yourmail.com.au" required>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="buyerAddressLine1">Address</label>
+				<input type="text" class="form-control" id="buyerAddressLine1" placeholder="1234 Main St" required autocomplete="street-address address-line1">
+			  </div>
+			  <div class="form-group">
+				<label for="buyerAddressLine2">Address 2</label>
+				<input type="text" class="form-control" id="buyerAddressLine2" placeholder="Apartment, studio, or floor"  autocomplete="street-address address-line2">
+			  </div>
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="buyerAddressCity">City</label>
+				  <input type="text" class="form-control" id="buyerAddressCity" required autocomplete="address-level2">
+				</div>
+				<div class="form-group col-md-4">
+				  <label for="buyerAddressState">State</label>
+				  <select id="buyerAddressState" class="form-control" required autocomplete="address-level1">
+					<option value="" selected>Choose...</option>
+					<option value="ACT">Australian Capital Territory</option>
+					<option value="NSW">New South Wales</option>
+					<option value="TAS">Tasmania</option>
+					<option value="NT">Northern Territory</option>
+					<option value="SA">South Australia</option>
+					<option value="QLD">Queensland</option>
+					<option value="VIC">Victoria</option>
+					<option value="OTHER">Outside of Australia</option>
+				  </select>
+				</div>
+				<div class="form-group col-md-2">
+				  <label for="buyerAddressPostCode">Post Code</label>
+				  <input type="text" class="form-control" id="buyerAddressPostCode" required autocomplete="postal-code">
+				</div>
+			  </div>
+			  <h2 class="text-muted">Account Information</h2>
+			  <div id="cardLogoContainer"></div>
+			  <div class="form-group">
+				<label for="cardholderName">Card Name</label>
+				<input type="text" class="form-control" data-quickstream-api="cardholderName" id="cardholderName" autocomplete="cc-name"/>
+			  </div>
+			  <div class="form-row">
+				  <div class="form-group col-md-6">
+					<label>Card Number</label>
+					<input type="text" class="form-control" id="cardNumber" data-quickstream-api="cardNumber"  required inputmode="numeric" autocomplete="cc-number" minLength="13" maxLength="19"/>
+				  </div>
+				  <div class="form-group col-sm-6">
+					<label>Expiry Date</label>
+					<div class="row">
+					  <div class="col-sm-4">
+						<input type="numeric" inputmode="numeric" class="form-control" placeholder="MM" data-quickstream-api="expiryDateMonth" required autocomplete="cc-exp-month" minLength="2" maxLength="2">
+					  </div>
+					  <div class="col-sm-1">
+						<span class="slash">/</span>
+					  </div>
+					  <div class="col-sm-4">
+						<input type="numeric" inputmode="numeric" class="form-control" placeholder="YYYY" data-quickstream-api="expiryDateYear" required autocomplete="cc-exp-year" minLength="4" maxLength="4">
+					  </div>
+					  <div class="col-sm-3">
+						<input type="text" inputmode="numeric" class="form-control" placeholder="CVV" data-quickstream-api="cvn" required autocomplete="cc-csc" minLength="3" maxLength="4" data-toggle="tooltip" title="Security code on the back of your card" data-animation="true"/>
+					  </div>
+					</div>
+				</div>
+			  </div>
+			  <button type="submit" class="btn btn-primary btn-lg">Pay Now</button>
+			</form>
+			
+			<br/>
+			
+			<footer class="footer">
+				<p>Supplier Name</p>
+				<p>Powered by Westpac QuickStream.</p>
+			</footer>
+			
+		</div>
+		
+		<script src="https://api.quickstream.westpac.com.au/rest/v1/quickstream-api-1.0.min.js"></script>
+		<script src="accepted-cards.js"></script>
+		
+		<script>
+			QuickstreamAPI.init({
+				publishableApiKey: "QUICKSTREAMDEMO_PUB"
+			});
+			
+			var cardsModule = QuickstreamAPI.creditCards;
+
+			$(function() {
+				let form = $("form"),
+				button = $("button");
+				
+				// enable tooltips
+				$('[data-toggle="tooltip"]').tooltip();
+				
+				AcceptedCards.init({
+					cardsModule : cardsModule,
+					supplierBusinessCode : "QUICKSTREAMDEMO",
+					form : form
+				});
+				AcceptedCards.appendAcceptedCards( $("#cardLogoContainer") );
+				AcceptedCards.appendCardSurcharges( $("#cardSurchargesContainer") );
+			
+				
+				form.submit(function(event) {
+					
+					// disable the button so it cannot be clicked again
+					button.attr("disabled", "disabled");
+					
+					// do not submit when the form is not valid
+					if (form[0].checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+					}
+					
+					form.removeClass("animated jello");
+					
+					// validate the cards module using Quickstream API JS
+					cardsModule.getToken(form[0], "QUICKSTREAMDEMO", function(errors, data) {
+					
+						button.attr("disabled", null);
+						
+						if (errors) {
+							cardsModule.appendErrors(data.form, errors);
+							$("div.error").addClass("invalid-feedback");
+							form.addClass("animated jello");
+							
+						} else if( form[0].checkValidity() === true ) {
+							cardsModule.appendTokenToForm(data.form, data.token);
+							
+						}
+					});
+					
+					// show error or success styles
+					form[0].classList.add('was-validated');
+				});
+				
+			});
+		</script>
+	 
+	</body>
+
+</html>
